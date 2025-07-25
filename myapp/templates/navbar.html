@@ -1,53 +1,91 @@
 {% load static %}
 
-<!-- templates/navbar.html -->
-<nav class="bg-red-900 text-white shadow-md">
-  <div class="container mx-auto flex items-center justify-between px-6 py-3">
-    <!-- Logo -->
-    <div class="text-2xl font-bold">
-      <a href="#" class="hover:text-yellow-400 transition">iflix</a>
+<!-- Navbar -->
+<nav class="bg-red-800 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="flex items-center">
+                <img src="{% static 'images/logo_transparent.png' %}" alt="Logo" class="h-24 w-auto">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Home
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Sedang Tayang
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Coming Soon
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Bioskop
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Jadwal
+                    </a>
+                </div>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button class="border border-yellow-400 text-white hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Masuk</span>
+                </button>
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 hover:text-white rounded-md text-sm font-medium transition-colors duration-200">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Daftar</span>
+                </button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <!-- Icon Menu -->
+                    <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    <!-- Icon Close -->
+                    <i id="close-icon" class="fa-solid fa-xmark text-2xl hidden"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- Menu Desktop -->
-    <div class="hidden md:flex space-x-6">
-      <a href="#" class="hover:text-yellow-400 transition">Home</a>
-      <a href="#" class="hover:text-yellow-400 transition">Film</a>
-      <a href="#" class="hover:text-yellow-400 transition">Jadwal</a>
-      <a href="#" class="hover:text-yellow-400 transition">Bioskop</a>
-      <a href="#" class="hover:text-yellow-400 transition">Promo</a>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800">
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Home
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Sedang Tayang
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Coming Soon
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Bioskop
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Jadwal
+            </a>
+            <div class="border-t border-gray-700 pt-4 pb-3">
+                <div class="flex items-center px-3 space-x-3">
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 block px-3 py-2 rounded-md text-base font-medium w-full">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Masuk</span>
+                    </button>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 block px-3 py-2 rounded-md text-base font-medium w-full">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Daftar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Login/Register -->
-    <div class="hidden md:flex space-x-4">
-      <a href="#" class="hover:text-yellow-400 transition">Login</a>
-      <a href="#" class="bg-yellow-400 text-gray-900 px-3 py-1 rounded-lg hover:bg-yellow-500 transition">Register</a>
-    </div>
-
-    <!-- Hamburger Menu (Mobile) -->
-    <div class="md:hidden">
-      <button id="menu-btn" class="focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Dropdown Menu (Mobile) -->
-  <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-2 px-6 pb-4">
-    <a href="#" class="hover:text-yellow-400 transition">Home</a>
-    <a href="#" class="hover:text-yellow-400 transition">Film</a>
-    <a href="#" class="hover:text-yellow-400 transition">Jadwal</a>
-    <a href="#" class="hover:text-yellow-400 transition">Bioskop</a>
-    <a href="#" class="hover:text-yellow-400 transition">Promo</a>
-    <a href="#" class="hover:text-yellow-400 transition">Login</a>
-    <a href="#" class="bg-yellow-400 text-gray-900 px-3 py-1 rounded-lg hover:bg-yellow-500 transition w-fit">Register</a>
-  </div>
 </nav>
 
-<script>
-  // Toggle Mobile Menu
-  document.getElementById('menu-btn').addEventListener('click', function () {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-  });
-</script>
+<script src="{% static 'js/navbar.js' %}"></script>
