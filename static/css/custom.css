@@ -1,0 +1,148 @@
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.poster-overlay {
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 70%, transparent 100%);
+}
+
+.btn-trailer {
+    background: linear-gradient(45deg, #e50914, #ff6b6b);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.btn-trailer:hover {
+    background: linear-gradient(45deg, #b8070f, #e55555);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.3);
+}
+
+.btn-wishlist {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-wishlist:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.carousel-indicator {
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: #e50914;
+    transform: scale(1.2);
+}
+
+.nav-btn {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.movie-card {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(229, 9, 20, 0.3);
+    z-index: 40;
+    -webkit-transform: translateY(-10px) scale(1.02);
+    -moz-transform: translateY(-10px) scale(1.02);
+    -ms-transform: translateY(-10px) scale(1.02);
+    -o-transform: translateY(-10px) scale(1.02);
+}
+
+.movie-poster {
+    transition: all 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.rating-badge {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    color: #1a1a1a;
+}
+
+.genre-tag {
+    background: rgba(229, 9, 20, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-scroll-btn {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.nav-scroll-btn:hover {
+    background: rgba(229, 9, 20, 0.8);
+    transform: scale(1.1);
+}
+
+.book-btn {
+    background: linear-gradient(45deg, #e50914, #ff6b6b);
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background: linear-gradient(45deg, #b8070f, #e55555);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+}
+
+.info-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.info-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
