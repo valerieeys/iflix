@@ -19,9 +19,9 @@
 </head>
 
 <body class="bg-gray-900 text-white font-open-sans min-h-screen">
-    {% include 'navbar.html' %}
-
     {% block content %}
+    
+    {% include 'navbar.html' %}
 
     <div class="carousel-container w-full h-screen relative">
         <!-- Carousel Track -->
@@ -64,7 +64,7 @@
 
             <!-- Slide 2 - Avatar 3 -->
             <div class="carousel-slide relative h-full">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop&crop=center" 
+                <img src="{% static 'images/banner4.png' %}" 
                     alt="Avatar 3" 
                     class="w-full h-full object-cover">
                 <div class="poster-overlay absolute inset-0"></div>
@@ -198,9 +198,267 @@
                 <div class="flex gap-6 w-max">
                     
                     <!-- Movie Card 1 -->
-                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0">
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
                         <div class="relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop&crop=center" 
+                            <img src="{% static 'images/banner4.png' %}" 
+                                alt="Avatar 2" 
+                                class="movie-poster w-full h-96 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="rating-badge px-3 py-1 rounded-full text-sm font-bold">7.9</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="genre-tag px-3 py-1 rounded-full text-white text-sm font-semibold">Sci-Fi</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold mb-1">Avatar: The Way of Water</h3>
+                                <p class="text-gray-300 text-sm">Action • Adventure • Fantasy</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Flex column + full height -->
+                        <div class="p-6 flex flex-col justify-between min-h-[230px]">
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                                Jake Sully and Ney'tiri have formed a family and are doing everything to stay together.
+                            </p>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-400">
+                                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                        <span class="text-sm font-semibold">7.9/10</span>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">3h 12m</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="book-btn flex-1 py-3 px-4 rounded-lg text-white font-semibold text-sm">
+                                        Pesan Tiket
+                                    </button>
+                                    <button class="info-btn px-4 py-3 rounded-lg text-white">
+                                        <i class="fa-solid fa-circle-info text-white text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
+                        <div class="relative overflow-hidden">
+                            <img src="{% static 'images/banner4.png' %}" 
+                                alt="Avatar 2" 
+                                class="movie-poster w-full h-96 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="rating-badge px-3 py-1 rounded-full text-sm font-bold">7.9</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="genre-tag px-3 py-1 rounded-full text-white text-sm font-semibold">Sci-Fi</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold mb-1">Avatar: The Way of Water</h3>
+                                <p class="text-gray-300 text-sm">Action • Adventure • Fantasy</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Flex column + full height -->
+                        <div class="p-6 flex flex-col justify-between min-h-[230px]">
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                                Jake Sully and Ney'tiri have formed a family and are doing everything to stay together.
+                            </p>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-400">
+                                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                        <span class="text-sm font-semibold">7.9/10</span>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">3h 12m</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="book-btn flex-1 py-3 px-4 rounded-lg text-white font-semibold text-sm">
+                                        Pesan Tiket
+                                    </button>
+                                    <button class="info-btn px-4 py-3 rounded-lg text-white">
+                                        <i class="fa-solid fa-circle-info text-white text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
+                        <div class="relative overflow-hidden">
+                            <img src="{% static 'images/banner4.png' %}" 
+                                alt="Avatar 2" 
+                                class="movie-poster w-full h-96 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="rating-badge px-3 py-1 rounded-full text-sm font-bold">7.9</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="genre-tag px-3 py-1 rounded-full text-white text-sm font-semibold">Sci-Fi</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold mb-1">Avatar: The Way of Water</h3>
+                                <p class="text-gray-300 text-sm">Action • Adventure • Fantasy</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Flex column + full height -->
+                        <div class="p-6 flex flex-col justify-between min-h-[230px]">
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                                Jake Sully and Ney'tiri have formed a family and are doing everything to stay together.
+                            </p>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-400">
+                                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                        <span class="text-sm font-semibold">7.9/10</span>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">3h 12m</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="book-btn flex-1 py-3 px-4 rounded-lg text-white font-semibold text-sm">
+                                        Pesan Tiket
+                                    </button>
+                                    <button class="info-btn px-4 py-3 rounded-lg text-white">
+                                        <i class="fa-solid fa-circle-info text-white text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
+                        <div class="relative overflow-hidden">
+                            <img src="{% static 'images/banner4.png' %}" 
+                                alt="Avatar 2" 
+                                class="movie-poster w-full h-96 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="rating-badge px-3 py-1 rounded-full text-sm font-bold">7.9</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="genre-tag px-3 py-1 rounded-full text-white text-sm font-semibold">Sci-Fi</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold mb-1">Avatar: The Way of Water</h3>
+                                <p class="text-gray-300 text-sm">Action • Adventure • Fantasy</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Flex column + full height -->
+                        <div class="p-6 flex flex-col justify-between min-h-[230px]">
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                                Jake Sully and Ney'tiri have formed a family and are doing everything to stay together.
+                            </p>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-400">
+                                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                        <span class="text-sm font-semibold">7.9/10</span>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">3h 12m</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="book-btn flex-1 py-3 px-4 rounded-lg text-white font-semibold text-sm">
+                                        Pesan Tiket
+                                    </button>
+                                    <button class="info-btn px-4 py-3 rounded-lg text-white">
+                                        <i class="fa-solid fa-circle-info text-white text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
+                        <div class="relative overflow-hidden">
+                            <img src="{% static 'images/banner4.png' %}" 
+                                alt="Avatar 2" 
+                                class="movie-poster w-full h-96 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="rating-badge px-3 py-1 rounded-full text-sm font-bold">7.9</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="genre-tag px-3 py-1 rounded-full text-white text-sm font-semibold">Sci-Fi</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold mb-1">Avatar: The Way of Water</h3>
+                                <p class="text-gray-300 text-sm">Action • Adventure • Fantasy</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Flex column + full height -->
+                        <div class="p-6 flex flex-col justify-between min-h-[230px]">
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                                Jake Sully and Ney'tiri have formed a family and are doing everything to stay together.
+                            </p>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-400">
+                                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                        <span class="text-sm font-semibold">7.9/10</span>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">3h 12m</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="book-btn flex-1 py-3 px-4 rounded-lg text-white font-semibold text-sm">
+                                        Pesan Tiket
+                                    </button>
+                                    <button class="info-btn px-4 py-3 rounded-lg text-white">
+                                        <i class="fa-solid fa-circle-info text-white text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
+                        <div class="relative overflow-hidden">
+                            <img src="{% static 'images/banner4.png' %}" 
+                                alt="Avatar 2" 
+                                class="movie-poster w-full h-96 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="rating-badge px-3 py-1 rounded-full text-sm font-bold">7.9</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="genre-tag px-3 py-1 rounded-full text-white text-sm font-semibold">Sci-Fi</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold mb-1">Avatar: The Way of Water</h3>
+                                <p class="text-gray-300 text-sm">Action • Adventure • Fantasy</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Flex column + full height -->
+                        <div class="p-6 flex flex-col justify-between min-h-[230px]">
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                                Jake Sully and Ney'tiri have formed a family and are doing everything to stay together.
+                            </p>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-400">
+                                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                        <span class="text-sm font-semibold">7.9/10</span>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">3h 12m</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="book-btn flex-1 py-3 px-4 rounded-lg text-white font-semibold text-sm">
+                                        Pesan Tiket
+                                    </button>
+                                    <button class="info-btn px-4 py-3 rounded-lg text-white">
+                                        <i class="fa-solid fa-circle-info text-white text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden w-80 flex-shrink-0 mt-10">
+                        <div class="relative overflow-hidden">
+                            <img src="{% static 'images/banner4.png' %}" 
                                 alt="Avatar 2" 
                                 class="movie-poster w-full h-96 object-cover">
                             <div class="absolute top-4 left-4">
