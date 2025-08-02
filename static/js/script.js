@@ -65,21 +65,20 @@ document.addEventListener('keydown', (e) => {
 // =====================
 // MOVIES CONTAINER SCROLL
 // =====================
+const container = document.getElementById('moviesContainer');
+
 function scrollMovies(direction) {
-    const container = document.getElementById('moviesContainer');
     const scrollAmount = 340; // Width of card + gap
-    
     container.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
     });
 }
 
-const container = document.getElementById('moviesContainer');
+// Touch/swipe support
 let startTouchX = 0;
 let scrollLeft = 0;
 
-// Touch/swipe support for movie container
 container.addEventListener('touchstart', (e) => {
     startTouchX = e.touches[0].pageX - container.offsetLeft;
     scrollLeft = container.scrollLeft;
@@ -106,4 +105,33 @@ container.addEventListener('wheel', (e) => {
             behavior: 'smooth'
         });
     }
+});
+
+
+// =====================
+// MALL SELECTION
+// =====================
+document.querySelectorAll('.select-mall-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const mallCard = this.closest('.mall-card');
+        const mallName = mallCard.querySelector('h3').textContent;
+        
+        // Remove active state from all cards
+        document.querySelectorAll('.mall-card').forEach(card => {
+            card.classList.remove('ring-2', 'ring-red-500');
+            const btn = card.querySelector('.select-mall-btn');
+            btn.textContent = 'Pilih Lokasi';
+            btn.classList.remove('bg-green-600');
+            btn.classList.add('bg-red-600');
+        });
+        
+        // Add active state to selected card
+        mallCard.classList.add('ring-2', 'ring-red-500');
+        this.textContent = 'Terpilih ✓';
+        this.classList.remove('bg-red-600');
+        this.classList.add('bg-green-600');
+        
+        // Log selected mall (atau bisa disimpan ke localStorage)
+        console.log('Selected mall:', mallName);
+    });
 });

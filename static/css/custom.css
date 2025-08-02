@@ -146,3 +146,57 @@
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
 }
+
+.select-mall-btn {
+    background: linear-gradient(45deg, #e50914, #ff6b6b);
+    transition: all 0.3s ease;
+}
+
+.select-mall-btn:hover {
+    background: linear-gradient(45deg, #b8070f, #e55555);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+}
+
+.mall-card {
+    position: relative;
+    z-index: 1;
+}
+
+.mall-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(229, 9, 20, 0.2);
+    z-index: 10;
+}
+
+.mall-card:hover .mall-image {
+    transform: scale(1.05);
+}
+
+.testimonial-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+.star-rating {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#mobile-menu-button i {
+    display: none; 
+}
+#mobile-menu-button i:not(.hidden) {
+    display: block; 
+}
