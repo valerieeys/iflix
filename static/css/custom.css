@@ -193,3 +193,10 @@
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+#mobile-menu-button i {
+    display: none; 
+}
+#mobile-menu-button i:not(.hidden) {
+    display: block; 
+}

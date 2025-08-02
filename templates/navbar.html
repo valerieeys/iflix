@@ -1,0 +1,131 @@
+{% load static %}
+
+<!-- Navbar -->
+<nav id="navbar" class="bg-transparent backdrop-blur-sm fixed top-0 w-full z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <a href="{% url 'main' %}" class="flex items-center">
+                <img src="{% static 'images/logo_transparent.png' %}" alt="Logo" class="h-24 w-auto">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="{% url 'main' %}" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Home
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Sedang Tayang
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Coming Soon
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Bioskop
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-400 hover:underline underline-offset-8 decoration-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        Jadwal
+                    </a>
+                </div>
+            </div>
+
+            <!-- Auth Buttons / Profile Menu -->
+            <div class="hidden md:flex items-center space-x-4">
+                {% if user.is_authenticated %}
+                    <!-- Profile Dropdown -->
+                    <div class="relative group">
+                        <button id="profile-dropdown-button" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 hover:text-white rounded-md text-sm font-medium transition-colors duration-200 flex items-center space-x-2">
+                            <i class="fa-solid fa-user"></i>
+                            <span>{{ user.username }}</span>
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="profile-dropdown-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden group-hover:block">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200">
+                                <i class="fa-solid fa-user mr-2"></i>
+                                My Profile
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200">
+                                <i class="fa-solid fa-list mr-2"></i>
+                                Order History
+                            </a>
+                            <hr class="my-1">
+                            <a href="{% url 'logout' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200">
+                                <i class="fa-solid fa-right-from-bracket mr-2"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <!-- Sign In Button -->
+                    <a href="{% url 'register' %}"
+                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 hover:text-white rounded-md text-sm font-medium transition-colors duration-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Sign in</span>
+                    </a>
+                {% endif %}
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white p-2 rounded-md">
+                    <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    <i id="close-icon" class="fa-solid fa-xmark text-2xl hidden"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800">
+            <a href="{% url 'main' %}" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Home
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Sedang Tayang
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Coming Soon
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Bioskop
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                Jadwal
+            </a>
+            
+            <!-- Mobile Profile/Auth Section -->
+            <div class="border-t border-gray-700 pt-4 pb-3">
+                {% if user.is_authenticated %}
+                    <!-- Mobile Profile Menu -->
+                    <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fa-solid fa-user mr-2"></i>
+                        My Profile
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fa-solid fa-list mr-2"></i>
+                        Order History
+                    </a>
+                    <a href="{% url 'logout' %}" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fa-solid fa-right-from-bracket mr-2"></i>
+                        Logout
+                    </a>
+                {% else %}
+                    <!-- Mobile Sign In Button -->
+                    <div class="flex items-center px-3 space-x-3">
+                        <a href="{% url 'register' %}" 
+                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 block px-3 py-2 rounded-md text-base font-medium w-full text-center">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Sign in</span>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script src="{% static 'js/navbar.js' %}"></script>
